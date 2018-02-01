@@ -321,31 +321,24 @@ HINT: Use Math.ceil() and Math.random()
  --------------------------- */
 
 function guessing_game(guess) {
-    console.log("matched or unmatched?");
-     var match, num;
+    //console.log("matched or unmatched?");
+    var match, num;
 
-     //for(var i = 0; i <= 10000; i++)
-     //{
-       num = Math.random() * 100;  // Math.random() return a random number between 0 and 1
-       num = Math.ceil(num);  // used floor thus getting 1 among 10000 samples
-       num = (num % 10) + 1; // to generate number between 1 and 10
-       console.log("at i = " + i + ", num = " + num);
-     //}
-
-     if(guess === num)
-     {
-       return("Good Work");
-     }
-
-     else
-     {
-      return("Not matched");
-     }
+    num = Math.random() * 100;  
+    num = Math.ceil(num);  
+    num = (num % 10) + 1; 
+    console.log("Randomly generated no: " + num);                                                                                                                  
+    
+    if(guess == num){
+      return("Nice job! You guessed correctly! \n");
+    } else{
+      return("Better luck next time");
+    }
     
 }
 
 console.log("Guessing Game:");
 /* Uncomment the following to check */
-   var guess = prompt('Guess the number between 1 and 10 inclusive');
-   console.log("User guessed: "+ guess);
-   guessing_game(guess);
+var guess = prompt('Guess the number between 1 and 10 inclusive');
+console.log("User guessed: "+ guess);
+console.log( guessing_game(guess) );
